@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BYD Oway Đà Nẵng — Đại lý xe điện BYD chính hãng</title>
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Favicon placeholder -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2300a651'/><text x='50%25' y='55%25' font-size='14' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='system-ui'>B</text></svg>">
+</head>
+
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="navbar">
+  <a href="#" class="nav-logo">BYD<span>ĐN</span></a>
+  <ul class="nav-links">
+    <li><a href="#models">Dòng xe</a></li>
+    <li><a href="#features">Công nghệ</a></li>
+    <li><a href="#brand">Về BYD</a></li>
+    <li><a href="#services">Dịch vụ</a></li>
+    <li><a href="#showroom">Showroom</a></li>
+    <li><a href="#news">Tin tức</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Đăng ký lái thử</a>
+</header>
+
+<!-- ARROW TOGGLE -->
+<button class="nav-toggle" id="navToggle" aria-label="Mở/đóng menu" aria-expanded="false">
+  <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
+
+<!-- OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+<!-- DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu điều hướng">
+  <div class="drawer-header">
+    <a href="#" class="drawer-logo">BYD<span>ĐN</span></a>
+  </div>
+  <ul class="drawer-links">
+    <li><a href="#models"   class="dlink"><span class="dot"></span>Dòng xe BYD</a></li>
+    <li><a href="#features" class="dlink"><span class="dot"></span>Công nghệ Blade</a></li>
+    <li><a href="#brand"    class="dlink"><span class="dot"></span>Về BYD Đà Nẵng</a></li>
+    <li><a href="#services" class="dlink"><span class="dot"></span>Dịch vụ</a></li>
+    <li><a href="#showroom" class="dlink"><span class="dot"></span>Showroom</a></li>
+    <li><a href="#news"     class="dlink"><span class="dot"></span>Tin tức & Khuyến mãi</a></li>
+  </ul>
+  <div class="drawer-footer">
+    <a href="#cta" class="drawer-cta dlink">Đăng ký lái thử miễn phí</a>
+  </div>
+</div>
+
+<!-- HERO — 2 column split -->
+<section class="hero" id="home">
+
+  <!-- LEFT: text on solid white bg — always readable -->
+  <div class="hero-left">
+    <div class="hero-body">
+      <p class="hero-eyebrow">Đại lý BYD chính hãng — Đà Nẵng & Miền Trung</p>
+      <h1 class="hero-title">Xe điện BYD —<br><em>Tương lai di động</em></h1>
+      <p class="hero-sub">BYD Oway Đà Nẵng — đại lý phân phối xe điện BYD chính hãng tại Đà Nẵng và Miền Trung. Công nghệ pin Blade tiên tiến, ưu đãi lên đến 200 triệu đồng.</p>
+      <div class="hero-actions">
+        <a href="#models" class="btn-primary">Xem dòng xe BYD →</a>
+        <a href="#cta"    class="btn-ghost">📞 Tư vấn miễn phí</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">Đại lý chính hãng</span>
+        <span class="hero-trust-item">Bảo hành 8 năm</span>
+        <span class="hero-trust-item">Trả góp 0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: canvas illustration -->
+  <div class="hero-right">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <!-- floating promo badge -->
+    <div class="hero-badge">
+      <div class="hero-badge-label">Ưu đãi tháng này</div>
+      <div class="hero-badge-val">200<span style="font-size:14px;font-weight:600"> triệu</span></div>
+      <div class="hero-badge-sub">Tổng khuyến mãi tối đa</div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Cuộn xuống</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <!-- STATS BAR — spans full width -->
+  <div class="hero-stats">
+    <div class="hstat">
+      <div class="hstat-num"><span id="hs1">0</span><sup>+</sup></div>
+      <div class="hstat-lbl">Dòng xe BYD</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num"><span id="hs2">0</span><sup>km</sup></div>
+      <div class="hstat-lbl">Phạm vi tối đa</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num"><span id="hs3">0</span><sup>tr</sup></div>
+      <div class="hstat-lbl">Ưu đãi tối đa</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num"><span id="hs4">0</span><sup>%</sup></div>
+      <div class="hstat-lbl">Hỗ trợ trả góp</div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="models-sec" id="models">
+  <div class="models-hdr">
+    <div class="reveal">
+      <p class="sec-label">Dòng xe BYD 2025</p>
+      <h2 class="sec-title">Giá xe BYD<br>tốt nhất Đà Nẵng</h2>
+    </div>
+    <p class="sec-sub reveal">Cập nhật giá bán và khuyến mãi mới nhất. Nhiều ưu đãi đặc biệt dành riêng cho khách hàng tại Đà Nẵng và Miền Trung.</p>
+  </div>
+  <div class="slider-wrap reveal">
+    <div class="slider-track" id="sliderTrack">
+
+      <div class="model-card">
+        <div class="model-thumb"><canvas id="c1" width="600" height="375"></canvas></div>
+        <div class="model-body">
+          <span class="model-badge">Giảm 10%</span>
+          <div class="model-name">BYD ATTO 3</div>
+          <div class="model-price-old">766.000.000 ₫</div>
+          <div class="model-price">686.000.000 ₫</div>
+          <div class="model-specs">
+            <div><div class="spec-val">480<small>km</small></div><div class="spec-lbl">Phạm vi</div></div>
+            <div><div class="spec-val">3.7<small>s</small></div><div class="spec-lbl">0–50km/h</div></div>
+            <div><div class="spec-val">150<small>kW</small></div><div class="spec-lbl">Công suất</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-thumb"><canvas id="c2" width="600" height="375"></canvas></div>
+        <div class="model-body">
+          <span class="model-badge">Giảm 5%</span>
+          <div class="model-name">BYD SEALION 6</div>
+          <div class="model-price-old">839.000.000 ₫</div>
+          <div class="model-price">799.000.000 ₫</div>
+          <div class="model-specs">
+            <div><div class="spec-val">Hybrid</div><div class="spec-lbl">Loại xe</div></div>
+            <div><div class="spec-val">35<small>ph</small></div><div class="spec-lbl">Sạc nhanh</div></div>
+            <div><div class="spec-val">LFP</div><div class="spec-lbl">Pin Blade</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-thumb"><canvas id="c3" width="600" height="375"></canvas></div>
+        <div class="model-body">
+          <span class="model-badge">Giảm 17%</span>
+          <div class="model-name">BYD SEAL</div>
+          <div class="model-price-old">1.119.000.000 ₫</div>
+          <div class="model-price">927.000.000 ₫</div>
+          <div class="model-specs">
+            <div><div class="spec-val">520<small>km</small></div><div class="spec-lbl">Phạm vi</div></div>
+            <div><div class="spec-val">1.2<small>s</small></div><div class="spec-lbl">0–50km/h</div></div>
+            <div><div class="spec-val">230<small>kW</small></div><div class="spec-lbl">Công suất</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-thumb"><canvas id="c4" width="600" height="375"></canvas></div>
+        <div class="model-body">
+          <span class="model-badge">Flagship</span>
+          <div class="model-name">BYD HAN</div>
+          <div class="model-price">1.489.000.000 ₫</div>
+          <div class="model-specs">
+            <div><div class="spec-val">521<small>km</small></div><div class="spec-lbl">Phạm vi</div></div>
+            <div><div class="spec-val">1.3<small>s</small></div><div class="spec-lbl">0–50km/h</div></div>
+            <div><div class="spec-val">246<small>kW</small></div><div class="spec-lbl">Công suất</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-thumb"><canvas id="c5" width="600" height="375"></canvas></div>
+        <div class="model-body">
+          <span class="model-badge">MPV điện</span>
+          <div class="model-name">BYD M6</div>
+          <div class="model-price">756.000.000 ₫</div>
+          <div class="model-specs">
+            <div><div class="spec-val">420<small>km</small></div><div class="spec-lbl">Phạm vi</div></div>
+            <div><div class="spec-val">5.0<small>s</small></div><div class="spec-lbl">0–50km/h</div></div>
+            <div><div class="spec-val">150<small>kW</small></div><div class="spec-lbl">Công suất</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <div class="model-thumb"><canvas id="c6" width="600" height="375"></canvas></div>
+        <div class="model-body">
+          <span class="model-badge">Mới nhất</span>
+          <div class="model-name">BYD ATTO 2</div>
+          <div class="model-price">669.000.000 ₫</div>
+          <div class="model-specs">
+            <div><div class="spec-val">480<small>km</small></div><div class="spec-lbl">Phạm vi</div></div>
+            <div><div class="spec-val">3.7<small>s</small></div><div class="spec-lbl">0–50km/h</div></div>
+            <div><div class="spec-val">150<small>kW</small></div><div class="spec-lbl">Công suất</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slider-ctrl reveal">
+    <button class="slide-btn" id="sPrev">←</button>
+    <div class="slide-dots" id="sDots">
+      <div class="sdot on" data-i="0"></div>
+      <div class="sdot" data-i="1"></div>
+      <div class="sdot" data-i="2"></div>
+      <div class="sdot" data-i="3"></div>
+      <div class="sdot" data-i="4"></div>
+      <div class="sdot" data-i="5"></div>
+    </div>
+    <button class="slide-btn" id="sNext">→</button>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-sec" id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num"><span class="cu" data-t="9">0</span><sup> dòng</sup></div>
+      <div class="stat-bar"></div>
+      <div class="stat-desc">Dòng xe BYD đang phân phối — từ sedan, SUV đến MPV và xe thể thao</div>
+    </div>
+    <div class="stat-item reveal d1">
+      <div class="stat-num"><span class="cu" data-t="200">0</span><sup>tr</sup></div>
+      <div class="stat-bar"></div>
+      <div class="stat-desc">Tổng ưu đãi tối đa cho khách hàng — giảm thuế trước bạ và quà tặng</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-num"><span class="cu" data-t="85">0</span><sup>%</sup></div>
+      <div class="stat-bar"></div>
+      <div class="stat-desc">Hỗ trợ vay vốn tối đa, lãi suất ưu đãi, không cần chứng minh thu nhập</div>
+    </div>
+    <div class="stat-item reveal d3">
+      <div class="stat-num"><span class="cu" data-t="8">0</span><sup>năm</sup></div>
+      <div class="stat-bar"></div>
+      <div class="stat-desc">Bảo hành pin BYD Blade — cam kết hiệu suất toàn diện theo năm tháng</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-sec" id="features">
+  <div class="reveal">
+    <p class="sec-label">Công nghệ BYD</p>
+    <h2 class="sec-title">Pin Blade —<br>Đột phá an toàn</h2>
+    <p class="sec-sub">Công nghệ độc quyền của BYD — pin Blade LFP không bốc cháy, mật độ năng lượng cao hơn 50% so với pin thông thường.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feat-item reveal">
+      <div class="feat-icon">🔋</div>
+      <div><div class="feat-title">Pin Blade LFP độc quyền</div><div class="feat-desc">Công nghệ pin lithium sắt phốt phát hình lưỡi dao — chịu được đinh xuyên thủng mà không bốc cháy, bảo hành 8 năm toàn diện.</div></div>
+    </div>
+    <div class="feat-item reveal d1">
+      <div class="feat-icon">⚡</div>
+      <div><div class="feat-title">Sạc nhanh DC 80kW+</div><div class="feat-desc">Sạc từ 30% lên 80% chỉ trong 30 phút. Hỗ trợ sạc AC tại nhà và sạc nhanh DC tại hơn 500 điểm trên toàn quốc.</div></div>
+    </div>
+    <div class="feat-item reveal d2">
+      <div class="feat-icon">🛡️</div>
+      <div><div class="feat-title">DiLink 4.0 — Màn hình xoay</div><div class="feat-desc">Hệ thống thông tin giải trí DiLink thông minh, màn hình 12.8" xoay 360°, tích hợp AI, điều khiển giọng nói tiếng Việt.</div></div>
+    </div>
+    <div class="feat-item reveal d3">
+      <div class="feat-icon">🚗</div>
+      <div><div class="feat-title">Hệ thống lái thông minh</div><div class="feat-desc">Kiểm soát hành trình thích ứng, cảnh báo va chạm, hỗ trợ giữ làn đường — ADAS toàn diện cho mọi hành trình.</div></div>
+    </div>
+    <div class="feat-item reveal">
+      <div class="feat-icon">🌡️</div>
+      <div><div class="feat-title">Bơm nhiệt tích hợp</div><div class="feat-desc">Hệ thống nhiệt bơm thế hệ mới giữ hiệu suất pin ổn định từ -10°C đến 45°C — phù hợp khí hậu nhiệt đới Việt Nam.</div></div>
+    </div>
+    <div class="feat-item reveal d1">
+      <div class="feat-icon">📱</div>
+      <div><div class="feat-title">Ứng dụng BYD Smart</div><div class="feat-desc">Kiểm soát xe từ xa, theo dõi trạng thái sạc, tìm kiếm trạm sạc, đặt lịch bảo dưỡng — tất cả trên điện thoại.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND -->
+<section class="brand-sec" id="brand">
+  <div class="brand-layout">
+    <div class="rev-l">
+      <div class="brand-visual">
+        <canvas id="brandCanvas" width="600" height="450"></canvas>
+      </div>
+    </div>
+    <div class="rev-r">
+      <p class="sec-label">BYD Oway Đà Nẵng</p>
+      <h2 class="sec-title">Đại lý BYD<br>duy nhất tại<br>Đà Nẵng</h2>
+      <p style="font-size:15px;color:#4a5e52;line-height:1.7;margin-bottom:8px">BYD Oway Đà Nẵng là đại lý phân phối xe điện BYD chính hãng duy nhất tại Đà Nẵng và Miền Trung, với phương châm tận tình, chu đáo và hết mình vì khách hàng.</p>
+      <ul class="brand-list">
+        <li><span class="bcheck">✓</span>Đại lý BYD chính hãng duy nhất tại Đà Nẵng & Miền Trung</li>
+        <li><span class="bcheck">✓</span>Đội ngũ kỹ thuật viên được cấp chứng chỉ BYD chính hãng</li>
+        <li><span class="bcheck">✓</span>Tư vấn viên hỗ trợ tận nơi, đăng ký lái thử tại nhà</li>
+        <li><span class="bcheck">✓</span>Mua xe trả góp 0% — hỗ trợ đến 85%, bao đậu hồ sơ</li>
+        <li><span class="bcheck">✓</span>Giao xe nhanh nhất — cam kết giá ưu đãi tốt nhất thị trường</li>
+      </ul>
+      <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#cta" class="btn-primary">Đăng ký tư vấn →</a>
+        <a href="tel:0935683638" class="btn-ghost">📞 0935.683.638</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="reveal" style="text-align:center">
+    <p class="sec-label" style="justify-content:center">Dịch vụ</p>
+    <h2 class="sec-title">Hỗ trợ toàn diện</h2>
+    <p class="sec-sub" style="margin:0 auto 48px">Từ tư vấn mua xe đến bảo dưỡng sau bán hàng — BYD Oway Đà Nẵng đồng hành cùng bạn suốt hành trình.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <span class="svc-icon">🏎️</span>
+      <div class="svc-title">Đăng ký lái thử</div>
+      <div class="svc-desc">Lái thử miễn phí tại showroom hoặc tận nơi theo yêu cầu. Trải nghiệm thực tế trước khi quyết định.</div>
+    </div>
+    <div class="svc-card reveal d1">
+      <span class="svc-icon">💰</span>
+      <div class="svc-title">Mua xe trả góp</div>
+      <div class="svc-desc">Hỗ trợ vay đến 85% giá trị xe, lãi suất ưu đãi, không cần chứng minh thu nhập, bao đậu hồ sơ.</div>
+    </div>
+    <div class="svc-card reveal d2">
+      <span class="svc-icon">🔧</span>
+      <div class="svc-title">Đặt hẹn dịch vụ</div>
+      <div class="svc-desc">Đặt lịch bảo dưỡng định kỳ, sửa chữa, thay thế phụ tùng chính hãng BYD tại xưởng dịch vụ.</div>
+    </div>
+    <div class="svc-card reveal d3">
+      <span class="svc-icon">📊</span>
+      <div class="svc-title">Dự toán chi phí</div>
+      <div class="svc-desc">Tính chi phí lăn bánh, phí trước bạ, bảo hiểm và các chi phí phát sinh trước khi quyết định mua.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOM -->
+<section class="showroom-sec" id="showroom">
+  <div class="reveal">
+    <p class="sec-label">Showroom</p>
+    <h2 class="sec-title">Đến gặp chúng tôi</h2>
+    <p class="sec-sub">Showroom BYD Oway Đà Nẵng — đầy đủ dòng xe trưng bày, đội ngũ tư vấn chuyên nghiệp, sẵn sàng phục vụ 7 ngày/tuần.</p>
+  </div>
+  <div class="showroom-grid">
+    <div class="sr-card reveal" style="grid-column:1/-1;max-width:520px">
+      <div class="sr-city">🏢 BYD Oway Đà Nẵng — Showroom chính</div>
+      <div class="sr-addr">548–554 Nguyễn Hữu Thọ, Khuê Trung, Cẩm Lệ, Đà Nẵng</div>
+      <span class="sr-tag">Đang mở cửa</span>
+      <div class="sr-contact">Hotline 24/7: <a href="tel:0935683638">0935.683.638</a> — PTKD: Lương Quý Hạ</div>
+      <div class="sr-contact" style="margin-top:4px">Email: <a href="mailto:luongquyha.lqh@gmail.com">luongquyha.lqh@gmail.com</a></div>
+      <div class="sr-hours">Thứ 2 – Chủ nhật: 7:30 – 18:30 (Không nghỉ trưa)</div>
+    </div>
+    <div class="sr-card reveal d1">
+      <div class="sr-city">⚡ Trạm sạc nhanh</div>
+      <div class="sr-addr">Tại showroom — DC sạc nhanh 80kW, AC 11kW</div>
+      <span class="sr-tag">Hoạt động 24/7</span>
+      <div class="sr-hours">Miễn phí cho khách hàng BYD Oway</div>
+    </div>
+    <div class="sr-card reveal d2">
+      <div class="sr-city">🔧 Xưởng dịch vụ</div>
+      <div class="sr-addr">Cùng địa chỉ — kỹ thuật viên được đào tạo BYD chính hãng</div>
+      <span class="sr-tag">Mở cửa</span>
+      <div class="sr-hours">T2–T7: 7:30–17:30 · Đặt lịch qua hotline</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news-sec" id="news">
+  <div class="news-hdr">
+    <div class="reveal">
+      <p class="sec-label">Tin tức & Khuyến mãi</p>
+      <h2 class="sec-title" style="margin-bottom:0">Ưu đãi mới nhất<br>từ BYD Đà Nẵng</h2>
+    </div>
+    <a href="#" class="btn-ghost reveal">Xem tất cả →</a>
+  </div>
+  <div class="news-grid">
+    <div class="news-card reveal">
+      <div class="news-thumb"><canvas id="n1" width="800" height="450"></canvas></div>
+      <div class="news-body">
+        <div class="news-cat">Khuyến mãi</div>
+        <div class="news-title">Tết Ngọ rộn ràng — Ưu đãi lên đến 90 triệu đồng tại BYD Đà Nẵng</div>
+        <div class="news-date">17 tháng 1, 2026</div>
+      </div>
+    </div>
+    <div class="news-card reveal d1">
+      <div class="news-thumb"><canvas id="n2" width="800" height="450"></canvas></div>
+      <div class="news-body">
+        <div class="news-cat">Sự kiện</div>
+        <div class="news-title">Chương trình ưu đãi Tết Ất Tỵ 2025 — BYD Đắc Lộc, Xe Đắc Ý</div>
+        <div class="news-date">4 tháng 10, 2025</div>
+      </div>
+    </div>
+    <div class="news-card reveal d2">
+      <div class="news-thumb"><canvas id="n3" width="800" height="450"></canvas></div>
+      <div class="news-body">
+        <div class="news-cat">Hướng dẫn</div>
+        <div class="news-title">Hướng dẫn sử dụng bộ sạc cầm tay BYD 2.2kW — Đầy đủ thông số kỹ thuật</div>
+        <div class="news-date">25 tháng 2, 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <p class="sec-label reveal">Tư vấn bằng cái tâm</p>
+  <h2 class="sec-title reveal" style="max-width:560px;margin:0 auto 18px">Nhận ưu đãi<br>đặc biệt hôm nay?</h2>
+  <p class="sec-sub reveal" style="margin:0 auto 44px">Giảm 100% thuế trước bạ – Tặng Voucher tiền mặt – Tổng KM đến 200 Triệu đồng. Để lại thông tin để được tư vấn ngay!</p>
+  <div class="cta-btns reveal">
+    <a href="tel:0935683638" class="btn-white">📞 Gọi ngay: 0935.683.638</a>
+    <a href="https://zalo.me/0935683638" class="btn-owh">💬 Tư vấn qua Zalo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a href="#" class="nav-logo" style="text-decoration:none">BYD<span>ĐN</span></a>
+      <p>BYD Oway Đà Nẵng — Đại lý phân phối xe điện BYD chính hãng duy nhất tại Đà Nẵng và Miền Trung.</p>
+      <div class="ft-social">
+        <a href="https://www.facebook.com/byd.mientrung" class="soc-btn" aria-label="Facebook">f</a>
+        <a href="https://www.tiktok.com/@byd.danang" class="soc-btn" aria-label="TikTok">tk</a>
+        <a href="https://zalo.me/0935683638" class="soc-btn" aria-label="Zalo">z</a>
+        <a href="tel:0935683638" class="soc-btn" aria-label="Phone">☎</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Dòng xe BYD</h4>
+      <ul>
+        <li><a href="#">BYD ATTO 3</a></li>
+        <li><a href="#">BYD ATTO 2</a></li>
+        <li><a href="#">BYD SEALION 6</a></li>
+        <li><a href="#">BYD SEAL</a></li>
+        <li><a href="#">BYD HAN</a></li>
+        <li><a href="#">BYD M6</a></li>
+        <li><a href="#">BYD DOLPHIN 2026</a></li>
+        <li><a href="#">BYD M9</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Dịch vụ</h4>
+      <ul>
+        <li><a href="#">Đăng ký lái thử</a></li>
+        <li><a href="#">Mua xe trả góp</a></li>
+        <li><a href="#">Đặt hẹn dịch vụ</a></li>
+        <li><a href="#">Dự toán chi phí</a></li>
+        <li><a href="#">Yêu cầu báo giá</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Liên hệ</h4>
+      <ul>
+        <li><a href="tel:0935683638">0935.683.638</a></li>
+        <li><a href="#">548–554 Nguyễn Hữu Thọ</a></li>
+        <li><a href="#">Cẩm Lệ, Đà Nẵng</a></li>
+        <li><a href="mailto:luongquyha.lqh@gmail.com">luongquyha.lqh@gmail.com</a></li>
+        <li><a href="https://www.facebook.com/byd.mientrung">Facebook BYD Đà Nẵng</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2025 BYD Oway Đà Nẵng. PTKD: Lương Quý Hạ — 0935.683.638</p>
+    <div class="ft-legal">
+      <a href="#">Chính sách bảo mật</a>
+      <a href="#">Điều khoản sử dụng</a>
+    </div>
+  </div>
+  <p class="ft-disclaimer">⚠️ Website này không phải trang chính thức của BYD Việt Nam. Đây là chuyên trang thông tin được vận hành bởi chuyên viên tư vấn độc lập. Thông tin, giá bán và khuyến mãi mang tính tham khảo và có thể thay đổi. Mọi thông tin cá nhân được bảo mật tuyệt đối, không chia sẻ cho bên thứ ba.</p>
+</footer>
+
+
+<!-- Main JavaScript -->
+<script src="main.js"></script>
+</body>
+</html>
